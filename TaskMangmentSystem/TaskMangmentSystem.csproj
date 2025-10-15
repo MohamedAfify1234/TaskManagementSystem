@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TaskMangmentSystem.DAL\InfraStructure.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\InfraStructure\InfraStructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

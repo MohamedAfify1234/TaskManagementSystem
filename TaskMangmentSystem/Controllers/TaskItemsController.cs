@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Core.Models;
 using InfraStructure.Data;
-using TaskMangmentSystem.Models;
+//using TaskMangmentSystem.Models;
 using Core.Interfaces;
 
-namespace TaskMangmentSystem
+namespace TaskMangmentSystem.Controllers
 {
     public class TaskItemsController : Controller
     {

@@ -11,9 +11,17 @@ namespace InfraStructure.Data
 {
     public class TaskMangDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=TaskManagement;Integrated Security=True;Encrypt=False;Trust Server Certificate=True");
+        //}
+        public TaskMangDbContext():base()
         {
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=TaskManagement;Integrated Security=True;Encrypt=False;Trust Server Certificate=True");
+            
+        }
+        public TaskMangDbContext(DbContextOptions<TaskMangDbContext> options):base(options) 
+        {
+            
         }
         public DbSet<TaskItem> TaskItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

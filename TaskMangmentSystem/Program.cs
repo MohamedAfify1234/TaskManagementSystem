@@ -1,3 +1,9 @@
+using Core.Interfaces;
+using InfraStructure.Data;
+using InfraStructure.Repositories;
+using Microsoft.CodeAnalysis.Options;
+using Microsoft.EntityFrameworkCore;
+
 namespace TaskMangmentSystem
 {
     public class Program
@@ -7,7 +13,11 @@ namespace TaskMangmentSystem
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddScoped<ITaskRepository, TaskRepository>();
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<TaskMangDbContext>(Options =>
+            { Options.UseSqlServer(builder.Configuration.GetConnectionString("cs"));
+            });
 
             var app = builder.Build();
 

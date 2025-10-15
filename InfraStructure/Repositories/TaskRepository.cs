@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace InfraStructure.Repositories
 {
-    internal class TaskRepository : ITaskRepository
+    public class TaskRepository : ITaskRepository
     {
         TaskMangDbContext Context;
-        public TaskRepository()
+        public TaskRepository(TaskMangDbContext _Context)
         {
-            Context = new TaskMangDbContext();
+            Context = _Context;
 
         }
 
